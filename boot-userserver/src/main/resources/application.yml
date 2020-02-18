@@ -1,0 +1,25 @@
+server:
+  port: 8081
+
+spring:
+  datasource:
+    username: root
+    password: root
+    url: jdbc:mysql://localhost:3306/dubbo?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  dubbo:
+    application:
+      name: userservice
+    registry:
+      address: zookeeper://127.0.0.1:2181
+
+
+mybatis:
+  mapper-locations: classpath*:/mapper/*.xml
+
+#showSql
+logging:
+  level:
+    com:
+      example:
+        mapper : debug
